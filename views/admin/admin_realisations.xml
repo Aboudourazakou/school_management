@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id='realisation_book_action' model='ir.actions.act_window'>
+        <field name="name">realisation</field>
+        <field name="res_model">realisation</field>
+        <field name="view_mode">tree,form</field>
+         
+    </record>
+
+     
+    <menuitem name="ECOLE" id="school_base_menu" />
+    <menuitem name="realisation" id="realisation_menu" parent="school_base_menu" action="realisation_book_action" sequence="5"/>
+    
+   
+    <!-- Form View -->
+    <record id="realisation_book_view_form" model="ir.ui.view">
+        <field name="name">realisationx</field>
+        <field name="model">realisation</field>
+        <field name="arch" type="xml">
+            <form>
+               
+                <notebook colspan="3">
+                    <page string="Informations du realisation">
+                    <group>
+                            <field name="etudiant_id"/>
+                            <field name="devoir_id"/>
+                            <field  name="date"/>
+                            
+                           
+                    </group>
+
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="realisation_book_view_tree" model="ir.ui.view">
+        <field name="name">realisation</field>
+        <field name="model">realisation</field>
+        <field name="arch" type="xml">
+            <tree>
+               
+                <field name="etudiant_id"/>
+                <field name="devoir_id"/>
+                <field  name="date"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+
+</odoo>

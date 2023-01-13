@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id='enseignants_book_action' model='ir.actions.act_window'>
+        <field name="name">enseignants</field>
+        <field name="res_model">enseignant</field>
+        <field name="view_mode">tree,form</field>
+         
+    </record>
+
+    <menuitem name="ECOLE" id="school_base_menu" />
+    <menuitem name="enseignants" id="enseigants_menu" parent="school_base_menu" action="enseignants_book_action"/>
+   
+
+    <!-- Form View -->
+    <record id="enseignants_book_view_form" model="ir.ui.view">
+        <field name="name">enseignant</field>
+        <field name="model">enseignant</field>
+        <field name="arch" type="xml">
+            <form>
+               
+                <notebook colspan="3">
+                    <page string="Informations de l'enseignant">
+                    <group>
+                          
+                           
+                            <field  name="name"/>
+                            <field  name="prenom"/>
+                            <field  name="email"/>
+                            <field  name="telephone"/>
+                            <field name="matricule"/>
+                            <field  name="photo"/> 
+                          
+                    </group>
+
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="enseignants_book_view_tree" model="ir.ui.view">
+        <field name="name">enseignant</field>
+        <field name="model">enseignant</field>
+        <field name="arch" type="xml">
+            <tree>
+              
+                <field  name="name"/>
+                <field  name="prenom"/>
+                <field  name="email"/>
+                <field  name="telephone"/>
+                <field name="matricule"/>
+                <field  name="photo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+
+</odoo>

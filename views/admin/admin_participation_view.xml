@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id='participation_book_action' model='ir.actions.act_window'>
+        <field name="name">participations</field>
+        <field name="res_model">participation</field>
+        <field name="view_mode">tree,form</field>
+         
+    </record>
+
+     
+    <menuitem name="ECOLE" id="school_base_menu" />
+    <menuitem name="participation" id="participation_menu" parent="school_base_menu" action="participation_book_action" sequence="3"/>
+    
+   
+    <!-- Form View -->
+    <record id="participation_book_view_form" model="ir.ui.view">
+        <field name="name">participations</field>
+        <field name="model">participation</field>
+        <field name="arch" type="xml">
+            <form>
+               
+                <notebook colspan="3">
+                    <page string="Informations du participation">
+                    <group>
+                            
+                            <field name="id_etudiant"></field>
+                            <field name="id_seance"/>
+                           
+                           
+                    </group>
+
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="participation_book_view_tree" model="ir.ui.view">
+        <field name="name">participation</field>
+        <field name="model">participation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id_etudiant"></field>
+                <field name="id_seance"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+
+</odoo>

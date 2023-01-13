@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id='etudiants_book_action' model='ir.actions.act_window'>
+        <field name="name">Etudiants</field>
+        <field name="res_model">etudiant</field>
+        <field name="view_mode">tree,form,kanban</field>
+         
+    </record>
+
+     
+    <menuitem name="ECOLE" id="school_base_menu" />
+    <menuitem name="etudiants" id="etudiants_menu" parent="school_base_menu" action="etudiants_book_action" sequence="2"/>
+    
+   
+    <!-- Form View -->
+    <record id="etudiants_book_view_form" model="ir.ui.view">
+        <field name="name">Etudiant</field>
+        <field name="model">etudiant</field>
+        <field name="arch" type="xml">
+            <form>
+               
+                <notebook colspan="3">
+                    <page string="Informations de l'etudiant">
+                    <group>
+                          
+                            <field name="age"/>
+                            <field  name="name"/>
+                            <field  name="prenom"/>
+                          
+                            <field  name="email"/>
+                            <field  name="niveau_id"/>
+                            <field  name="telephone"/>
+                            <field  name="photo"/> 
+
+                    </group>
+
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="etudiants_book_view_tree" model="ir.ui.view">
+        <field name="name">Etudiant</field>
+        <field name="model">etudiant</field>
+        <field name="arch" type="xml">
+            <tree>
+               
+                <field name="age"/>
+                <field  name="name"/>
+                <field  name="prenom"/>
+                <field  name="email"/>
+                <field  name="niveau_id"/>
+                <field  name="telephone"/>
+                <field  name="photo" widget="image" class="oe_avatar"/>
+            
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+
+
+
+<!-- Kanban view -->
+<record model="ir.ui.view" id="my_model_kanban_view">
+    <field name="name">Etudiant Kanban</field>
+    <field name="model">etudiant</field>
+    <field name="type">kanban</field>
+    <field name="arch" type="xml">
+       <kanban>
+       
+       
+          <templates>
+            <t t-name="kanban-box">
+                <div class="oe_kanban_global_click" style="display:flex;">
+                    <div style="width:60px;height:60px;border-radius:50%">
+                        <field border-radius="50%"
+                        name="photo" widget="image"/>
+                    </div>
+                <ul >
+                <li style="list-style:none" ><strong>Nom:</strong> <field
+                name="name"/></li>
+                <li  style="list-style:none" ><strong>Prenom:</strong> <field
+                name="prenom"/></li>
+                <li  style="list-style:none" ><strong>Niveau:</strong> <field
+                    name="niveau_id"/>
+                    </li>
+                    <li  style="list-style:none" ><strong>Age:</strong> <field
+                        name="age"/>
+                        </li>
+                <li   style="list-style:none"><strong>Telephone:</strong> <field
+                name="telephone"/>
+                </li>
+                <li  style="list-style:none" ><strong>Email:</strong> <field
+                    name="email"/>
+                    </li>
+                 
+                </ul>
+                 
+                </div>
+                </t>
+          </templates>
+       </kanban>
+    </field>
+ </record>
+ 
+
+</odoo>

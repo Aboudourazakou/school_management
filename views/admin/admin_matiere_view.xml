@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id='matiere_book_action' model='ir.actions.act_window'>
+        <field name="name">matiere</field>
+        <field name="res_model">matiere</field>
+        <field name="view_mode">tree,form</field>
+         
+    </record>
+
+     
+    <menuitem name="ECOLE" id="school_base_menu" />
+    <menuitem name="matiere" id="matiere_menu" parent="school_base_menu" action="matiere_book_action" sequence="5"/>
+    
+   
+    <!-- Form View -->
+    <record id="matiere_book_view_form" model="ir.ui.view">
+        <field name="name">matierex</field>
+        <field name="model">matiere</field>
+        <field name="arch" type="xml">
+            <form>
+               
+                <notebook colspan="3">
+                    <page string="Informations du matiere">
+                    <group>
+                            <field name="id_matiere"/>
+                            <field name="libelle"/>
+                            <field  name="enseignant_id"/>
+                            <field name="niveau_ids"/>
+                           
+                    </group>
+
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="matiere_book_view_tree" model="ir.ui.view">
+        <field name="name">matiere</field>
+        <field name="model">matiere</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id_matiere"/>
+                <field name="libelle"/>
+                <field  name="enseignant_id"/>
+                <field name="niveau_ids"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+
+</odoo>

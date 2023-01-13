@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id='devoir_book_action' model='ir.actions.act_window'>
+        <field name="name">devoir</field>
+        <field name="res_model">devoir</field>
+        <field name="view_mode">tree,form,graph,calendar</field>
+         
+    </record>
+
+     
+    <menuitem name="ECOLE" id="school_base_menu" />
+    <menuitem name="devoir" id="devoir_menu" parent="school_base_menu" action="devoir_book_action" sequence="3"/>
+    
+   
+    <!-- Form View -->
+    <record id="devoir_book_view_form" model="ir.ui.view">
+        <field name="name">devoir</field>
+        <field name="model">devoir</field>
+        <field name="arch" type="xml">
+            <form>
+               
+                <notebook colspan="3">
+                    <page string="Informations du devoir">
+                    <group>
+                            <field name="id_devoir"/>
+                            <field name="libelle"/>
+                            <field name="niveau_id"/>
+                            <field name="matiere_id"/>
+                            <field  name="file"/>
+                            <field  name="message"/>
+                            <field name="date_delai"/>
+                            <field  name="realisation_ids"/>
+                            <field name="count_realisation"/>
+                    </group>
+
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="devoir_book_view_tree" model="ir.ui.view">
+        <field name="name">devoir</field>
+        <field name="model">devoir</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id_devoir"/>
+                <field name="libelle"/>
+                <field name="niveau_id"/>
+                <field name="matiere_id"/>
+                <field  name="file"/>
+                <field  name="message"/>
+                <field name="attachement_id"/>
+                <field name="count_realisation"  />
+                <field  name="realisation_ids"/>
+                <field name="date_delai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+
+    <!-- graph view -->
+    <record id="view_devoir_graph" model="ir.ui.view">
+        <field name="name">Devoir Graph</field>
+        <field name="model">devoir</field>
+        <field name="type">graph</field>
+        <field name="arch" type="xml">
+            <graph string="Devoirs">
+                <field name="libelle" type="row"/>
+                <field name="count_realisation" type="measure" />
+            </graph>
+        </field>
+    </record>
+     <!-- End graph view -->
+
+     <!-- calendar view -->
+     <record id="view_calendar_devoir" model="ir.ui.view">
+        <field name="name">devoir.calendar</field>
+        <field name="model">devoir</field>
+        <field name="arch" type="xml">
+          <calendar date_start="date_publication" date_stop="date_publication" color="libelle" string="Devoirs">
+            <field name="libelle"/>
+            <field  name="message"/>
+          
+          </calendar>
+        </field>
+      </record>
+     <!-- End calendar view -->
+
+</odoo>

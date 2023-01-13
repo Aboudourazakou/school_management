@@ -1,0 +1,1 @@
+from . import personne,etudiant,enseignant,matiere,niveau,compte,devoir,seance,participation,realisation,article, tuteur;

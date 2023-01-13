@@ -1,0 +1,41 @@
+{
+    'name': 'Gestion et suivi d etudiants',
+    'version': '1.0',
+    'category': 'Website',
+    'depends': ['website'],
+    'data': [
+    'views/home_view.xml',
+    'views/admin/admin_seances_view.xml',
+    'views/admin/admin_participation_view.xml',
+    'views/admin/admin_etudiants_view.xml',
+    'views/admin/admin_enseignants_view.xml',
+    'views/admin/admin_parents_view.xml',
+    'views/admin/admin_matiere_view.xml',
+    'views/admin/admin_niveau_view.xml',
+    'views/admin/admin_realisations.xml',
+    'views/admin/admin_parents_view.xml',
+    'views/admin/admin_matiere_view.xml',
+    'views/admin/admin_comptes_view.xml', 
+    'views/admin/admin_articles.xml',
+    'views/admin/admin_devoirs_view.xml',
+
+    'views/etudiants/etudiant_absences_par_matiere.xml',
+    'views/etudiants/seance_presences_view.xml',
+    'views/etudiants/afficher_absences_ou_presences_par_seance.xml',
+    'views/etudiants/list_presences_par_niveau.xml',
+    'views/etudiants/create_seance_view.xml',
+    'views/etudiants/absences_etudiant.xml',
+    'views/etudiants/etudiants_ayant_soumis.xml',
+    'views/etudiants/etudiants_nayant_pas_soumis.xml',
+    
+    'views/devoirs/devoirs_view.xml',
+    'views/devoirs/devoirs_soumis.xml',
+    'views/devoirs/submit_devoir.xml',
+    'views/login_page_view.xml',
+   
+    'views/articles/publish_article.xml',
+    'views/articles/list_articles.xml',
+    
+    ],
+    'license': 'LGPL-3',
+}
